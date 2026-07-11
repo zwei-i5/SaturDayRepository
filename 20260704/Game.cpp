@@ -8,7 +8,7 @@ void Game::Init()
 	//-----------------------------
 	//背景初期化
 	//-----------------------------
-	background_Init();
+	background.Init();
 	//オブジェクト配置
 	objects.emplace_back(100, 300);
 	objects.emplace_back(500, 300);
@@ -35,4 +35,18 @@ void Game::Draw()
 	//背景描画
 	//----------------------
 	background.Draw(camera.GetX());
+	//------------------------------
+	//オブジェクト描画
+	//------------------------------
+	for (auto& obj : objects)
+	{
+		obj.Draw(camera.GetX());
+	}
+	//--------------------------------
+	//デバッグ表示
+	//--------------------------------
+	DrawFormatString(20, 20, GetColor(255, 255, 0), "CameraX : %.0f", camera.GetX());
+	DrawString(20, 50, "A : Left", GetColor(255, 255, 255));
+	DrawString(20, 70, "D : Right", GetColor(255, 255, 255));
+
 }

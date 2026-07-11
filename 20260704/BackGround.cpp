@@ -5,7 +5,7 @@
 //========================================
 void BackGround::Init()
 {
-	imageHandle = LoadGraph("img/BackGround.png");
+	imageHandle = LoadGraph("img/Background.png");
 }
 //========================================
 //•`‰æ

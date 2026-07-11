@@ -1,4 +1,5 @@
 #pragma once
+
 class BackGround
 {
 private:
@@ -9,5 +10,6 @@ public:
 	void Init();
 
 	void Draw(float cameraX);
+
 };
 

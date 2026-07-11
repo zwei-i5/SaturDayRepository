@@ -1,21 +1,28 @@
 #include"DxLib.h"
+#include"Game.h"
+#include"Config.h"
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	ChangeWindowMode(TRUE);
-	
+	SetWindowSize(GameConst::SCREEN_WIDTH,GameConst::SCREEN_HEIGHT);
 	DxLib_Init();
-	SetGraphMode(800,600,32);
 	if (DxLib_Init() == -1) return -1;
+	SetDrawScreen(DX_SCREEN_BACK);
+	SetFontSize(20);
 
-	int fontcolor = GetColor(255, 100, 0);
+	Game game;
+
+	game.Init();
+
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
+		game.Update();
+
 		ClearDrawScreen();
 
-		SetFontSize(120);
-		DrawFormatString(75, 250, fontcolor,"Just Do It");
+		game.Draw();
 
 		ScreenFlip();
 	}
