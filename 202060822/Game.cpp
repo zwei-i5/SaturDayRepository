@@ -20,7 +20,7 @@
 //{
 //	ChangeWindowMode(TRUE);
 //
-//	SetGraphMode(Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT, Config::COLORBIT);
+//	SetGraphMode(Config::WINDOW_WIDTH, Config::WINDOW_HEIGHT, Config::COLOR_BIT);
 //
 //	if (DxLib_Init() == -1)
 //	{
@@ -53,7 +53,7 @@
 //
 //	return true;
 //}
-//void Game;;Run()
+//void Game::Run()
 //{
 //	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 //	{
