@@ -1,70 +1,127 @@
 #pragma once
+//#include"Config.h"
+//
+//class Map;
+//
+//class Player
+//{
+//private:
+//
+//	//座標
+//	float x;
+//	float y;
+//
+//	//速度
+//
+//	float velocityX;
+//	float velocityY;
+//
+//	//アニメーション
+//
+//	float animTimer;
+//
+//	int animNowType;
+//	int animNowPattern;
+//	int animNowIndex;
+//
+//	//描画位置補正
+//	int drawOffsetX;
+//	int drawOffsetY;
+//
+//	//プレイヤー画像
+//
+//	int playerImg[Config::ANIM_PATTERN_NUM * Config::ANIM_TYPE_NUM];
+//
+//public:
+//	Player();
+//	~Player();
+//
+//	//初期化
+//
+//	bool Init();
+//
+//	//更新
+//	void Update(float deltaTime, const Map& map);
+//
+//	//描画
+//	void Draw();
+//};
 
-#include "Collision.h"
+#include "Config.h"
+
+
+class Map;
+
 
 class Player
 {
 private:
 
+    //========================================
+    // 座標
+    //========================================
+
     float x;
     float y;
+
+
+    //========================================
+    // 速度
+    //========================================
 
     float velocityX;
     float velocityY;
 
-    // ジャンプ
-    bool jumpFlag;
-    bool groundFlag;
-    bool headHitFlag;
 
-
-    // ジャンプキー
-    bool previousJump;
-
-
+    //========================================
     // アニメーション
-    float animationTimer;
+    //========================================
 
-    int animationType;
-    int animationPattern;
+    float animTimer;
+
+    int animNowType;
+    int animNowPattern;
+    int animNowIndex;
 
 
-    // 画像
-    int playerImg[3 * 4];
+    //========================================
+    // 描画位置補正
+    //========================================
+
+    int drawOffsetX;
+    int drawOffsetY;
 
 
-    // コライダー
-    Collision collision;
-    Collision footCollision;
-    Collision headCollision;
+    //========================================
+    // プレイヤー画像
+    //========================================
+
+    int playerImg[Config::ANIM_PATTERN_NUM * Config::ANIM_TYPE_NUM];
 
 
 public:
 
-    void Init();
+    Player();
+    ~Player();
 
-    void Update(float deltaTime);
+
+    //========================================
+    // 初期化
+    //========================================
+
+    bool Init();
+
+
+    //========================================
+    // 更新
+    //========================================
+
+    void Update(float deltaTime, const Map& map);
+
+
+    //========================================
+    // 描画
+    //========================================
 
     void Draw();
-
-    void Finalize();
-
-
-    Collision GetCollision() const;
-
-    Collision GetFootCollision() const;
-
-    Collision GetHeadCollision() const;
-
-
-    void FixCollision(const Collision& collision);
-
-    void SetGround(bool ground);
-
-    void SetHeadHit(bool hit);
-
-
-private:
-
-    void Move(float deltaTime);
 };

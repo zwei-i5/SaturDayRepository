@@ -2,41 +2,54 @@
 
 namespace Config
 {
-    // ウィンドウ
-    constexpr int WINDOW_WIDTH = 1440;
-    constexpr int WINDOW_HEIGHT = 900;
-    constexpr int COLOR_BIT = 16;
+	//========================================
+	//ウィンドウ
+	// =======================================
+	
+	//サイズ
+	constexpr int WINDOW_WIDTH = 1440;
+	constexpr int WINDOW_HEIGHT = 900;
+	//ビットサイズ
+	constexpr int COLOR_BIT = 16;
 
-    // マップ
-    constexpr int MAP_CHIP_SIZE = 64;
-    constexpr int MAP_X_NUM = 16;
-    constexpr int MAP_Y_NUM = 12;
-    constexpr int MAP_IMG_X_NUM = 2;
-    constexpr int MAP_IMG_Y_NUM = 1;
+	//========================================
+	//マップ
+	//========================================
 
-    // プレイヤー画像
-    constexpr int PLAYER_IMAGE_WIDTH = 64;
-    constexpr int PLAYER_IMAGE_HEIGHT = 96;
-    constexpr int PLAYER_ANIM_PATTERN_NUM = 3;
-    constexpr int PLAYER_ANIM_TYPE_NUM = 4;
-    constexpr float PLAYER_ANIMATION_FPS = 6.0f;
+	constexpr int MAP_CHIP_SIZE = 64;
+	constexpr int MAP_X_NUM = 16;
+	constexpr int MAP_Y_NUM = 12;
 
-    // プレイヤー
-    constexpr float PLAYER_START_X = 100.0f;
-    constexpr float PLAYER_START_Y = 100.0f;
+	//マップ画像
+	constexpr int MAP_IMG_X_NUM = 2;
+	constexpr int MAP_IMG_Y_NUM = 1;
 
-    constexpr float PLAYER_WIDTH = 40.0f;
-    constexpr float PLAYER_HEIGHT = 60.0f;
+	constexpr const char* MAP_IMAGE_PATH = "img/map.png";
 
-    constexpr float PLAYER_MAX_SPEED = 300.0f;
-    constexpr float PLAYER_ACCEL = 150.0f;
-    constexpr float PLAYER_FRICTION = 0.98f;
+	//========================================
+	//プレイヤー
+	//========================================
 
-    // ジャンプ
-    constexpr float JUMP_POWER = 550.0f;
-    constexpr float GRAVITY = 1500.0f;
-    constexpr float MAX_FALL_SPEED = 800.0f;
+	//開始位置
+	constexpr float PLAYER_START_X = 100.0f;
+	constexpr float PLAYER_START_Y = 100.0f;
+	//移動速度
+	constexpr float PLAYER_MOVE_SPEED = 100.0f;
+	//画像サイズ
+	constexpr int PLAYER_IMAGE_SIZE_X = 64;
+	constexpr int PLAYER_IMAGE_SIZE_Y = 96;
+	//プレイヤー当たり判定
+	constexpr int PLAYER_HIT_SIZE_X = 40;
+	constexpr int PLAYER_HIT_SIZE_Y = 64;
 
-    // 足・頭の判定
-    constexpr float COLLIDER_OFFSET = 10.0f;
+	//=======================================
+	//アニメーション
+	//=======================================
+
+	constexpr int ANIM_PATTERN_NUM = 3;
+	constexpr int ANIM_TYPE_NUM = 4;
+
+	constexpr float ANIMATION_FPS = 6.0f;
+
+	constexpr const char* PLAYER_IMAGE_PATH = "img/chara.png";
 }
